@@ -3,7 +3,7 @@ import axios from "axios";
 export const FetchCoins = async (url, limit = 10) => {
   const { data: request } = await axios.request({
     method: "GET",
-    url: `https://coinranking1.p.rapidapi.com/coins`,
+    url: `https://coinranking1.p.rapidapi.com/${url}`,
     params: {
       referenceCurrencyUuid: "yhjMzLPhuIDl",
       timePeriod: "24h",

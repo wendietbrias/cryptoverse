@@ -87,7 +87,7 @@ export default function Home({ data, news }) {
 }
 
 export const getServerSideProps = async () => {
-  const getCoins = await FetchCoins("/coins", 10);
+  const getCoins = await FetchCoins("coins", 10);
   const getNews = await FetchNews(10);
 
   return {

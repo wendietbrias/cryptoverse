@@ -4,7 +4,7 @@ import { FetchNews } from "../../services";
 const News = ({ news }) => {
   return (
     <div className="w-full min-h-screen py-7 px-7">
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid sm:grid-cols-2 xs:grid-cols-1 xl:grid-cols-3 gap-5">
         {news?.value?.map((data, idx) => (
           <NewsCard data={data} key={idx} />
         ))}

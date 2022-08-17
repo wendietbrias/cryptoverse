@@ -11,7 +11,7 @@ const CryptoCurency = ({ data }) => {
           className="bg-transparent border-b-2 outline-none border-gray-300 pb-3 w-[40%]"
         />
       </div>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid sm:grid-cols-2 xs:grid-cols-1 xl:grid-cols-3 gap-5">
         {data?.coins?.map((coin, idx) => (
           <CoinCard data={coin} key={idx} />
         ))}

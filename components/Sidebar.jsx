@@ -1,5 +1,5 @@
 import logo from "../assets/cryptocurrency.png";
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineMenu } from "react-icons/ai";
 import { VscGraphLine } from "react-icons/vsc";
 import { FaExchangeAlt } from "react-icons/fa";
 import { BsNewspaper } from "react-icons/bs";
@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 
 const Sidebar = () => {
   const router = useRouter();
+  const [openBar, setOpenBar] = useState(false);
 
   const pathLists = [
     {
@@ -35,14 +36,22 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-[21%] fixed left-0 top-0 h-screen bg-gray-800">
+    <div className="w-full h-24 items-center px-7 flex justify-between xl:w-[21%] fixed xl:block xl:px-0 left-0 top-0 xl:h-screen bg-gray-800 z-50">
       <Link href="/">
-        <div className="cursor-pointer flex items-center py-4 px-7">
-          <img className="w-12 h-12 mr-5" src={logo.src} alt="logo" />
+        <div className="cursor-pointer flex items-center xl:py-4 xl:px-7">
+          <img
+            className="xl:w-12 xl:h-12 w-8 h-8 mr-5"
+            src={logo.src}
+            alt="logo"
+          />
           <p className="text-white font-bold text-2xl">CryptoVerse</p>
         </div>
       </Link>
-      <ul className="w-full  mt-5">
+      <ul
+        className={`xl:w-full mt-5 xl:static fixed top-0 ${
+          openBar ? "left-0" : "-left-[100%]"
+        } w-[70%] h-screen xl:bg-transparent bg-gray-800 transition duration-500`}
+      >
         {pathLists.map((item, idx) => (
           <li
             key={idx}
@@ -59,6 +68,12 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <button
+        onClick={() => setOpenBar(!openBar)}
+        className="cursor-pointer xl:hidden block"
+      >
+        <AiOutlineMenu className="text-white text-xl font-bold " />
+      </button>
     </div>
   );
 };

@@ -67,8 +67,8 @@ const CoinSpecificInfo = ({ name, data }) => {
   ];
 
   return (
-    <div className="flex justify-between mt-10">
-      <div className="w-[45%]">
+    <div className="flex flex-wrap justify-between mt-10">
+      <div className="w-full xl:w-[45%]">
         <h3 className="text-xl font-bold text-blue-400">{name} Stats Info</h3>
         <p className="text-sm font-normal mt-2 text-gray-500">
           An overview showing the statistics of {name},such as the base and
@@ -93,7 +93,7 @@ const CoinSpecificInfo = ({ name, data }) => {
           ))}
         </div>
       </div>
-      <div className="w-[45%]">
+      <div className="w-full mt-5 xl:mt-0 xl:w-[45%]">
         <h3 className="text-xl font-bold text-blue-400">Ohter stats Info</h3>
         <p className="text-sm font-normal mt-2 text-gray-500">
           An overview showing the statistics of {name},such as the base and

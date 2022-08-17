@@ -19,7 +19,7 @@ const CurrencyStatsItem = ({ title, count }) => {
 
 export default function Home({ data, news }) {
   return (
-    <div className="w-full  min-h-screen py-7 px-7">
+    <div className="w-full  min-h-screen py-7 px-4 xl:px-7">
       <div className="w-full">
         <h2 className="font-bold text-gray-700 text-2xl">
           Global Crypto Stats
@@ -50,7 +50,7 @@ export default function Home({ data, news }) {
       </div>
       <div className="w-full mt-10">
         <div className="flex justify-between items-center">
-          <h2 className="font-bold text-gray-700 text-xl">
+          <h2 className="font-bold text-gray-700 text-lg xl:text-xl">
             Top 10 Cryptocurrencies in world
           </h2>
           <Link href="/cryptocurrency">
@@ -59,7 +59,7 @@ export default function Home({ data, news }) {
             </button>
           </Link>
         </div>
-        <div className="grid mt-7 grid-cols-3 gap-5">
+        <div className="grid mt-7 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
           {data?.coins?.map((coin, idx) => (
             <CoinCard data={coin} key={idx} count={idx} />
           ))}
@@ -76,7 +76,7 @@ export default function Home({ data, news }) {
             </button>
           </Link>
         </div>
-        <div className="grid mt-7 grid-cols-3 gap-5">
+        <div className="grid mt-7 xs:grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
           {news?.value?.map((data, idx) => (
             <NewsCard key={idx} data={data} />
           ))}

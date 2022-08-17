@@ -31,7 +31,7 @@ const CryptoDetail = ({ coinDetail }) => {
           statistics,market cap, and supply
         </p>
       </div>
-      <div className="w-full mt-10 flex justify-between items-end">
+      <div className="w-full mt-10 flex flex-wrap justify-between items-end">
         <div>
           <select
             defaultValue={timePeriod}
@@ -74,8 +74,8 @@ const CryptoDetail = ({ coinDetail }) => {
           circulatingSupply: coinDetail?.supply?.circulating,
         }}
       />
-      <div className="coin-desc flex justify-between mt-10">
-        <div className="w-[45%]">
+      <div className="coin-desc flex flex-wrap justify-between mt-10">
+        <div className="w-full xl:w-[45%]">
           <h2 className="text-blue-400 font-bold text-xl mb-5">
             What is {coinDetail?.name}?
           </h2>
@@ -84,7 +84,7 @@ const CryptoDetail = ({ coinDetail }) => {
             dangerouslySetInnerHTML={{ __html: coinDetail?.description }}
           ></div>
         </div>
-        <div className="w-[45%]">
+        <div className="w-full mt-5 xl:mt-0 xl:w-[45%]">
           <h2 className="text-blue-400 font-bold text-xl mb-5">
             {coinDetail?.name} links
           </h2>

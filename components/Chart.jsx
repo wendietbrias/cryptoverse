@@ -16,7 +16,7 @@ const ChartBar = ({ history }) => {
   }
 
   const datasets = {
-    labels: coinTimestamp.map((coin) => coin),
+    labels: coinTimestamp.map((coin) => new Date(coin).toLocaleDateString()),
     datasets: [
       {
         id: 1,
@@ -29,7 +29,7 @@ const ChartBar = ({ history }) => {
     ],
   };
   return (
-    <div className="w-full mt-10">
+    <div className="w-full mt-10 xl:h-full">
       <Line data={datasets} />
     </div>
   );
